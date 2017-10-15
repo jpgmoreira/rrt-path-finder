@@ -1,4 +1,4 @@
-# Pygame RRT path finder
+# Python-Pygame RRT path finder
 
   - RRT algorithm implementation using Python with Pygame. -
 
