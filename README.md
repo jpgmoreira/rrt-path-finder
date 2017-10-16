@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 =======
 # Python-Pygame RRT path finder
->>>>>>> 036ac891bb9ce97ab6d0845d24f8c31b3edded78
 
   - RRT algorithm implementation using Python with Pygame. -
 
