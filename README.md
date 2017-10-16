@@ -8,10 +8,10 @@
 
   - - -
 
- - Prerequisites:
+ - Prerequisites: <br>
  This program was written in Python 3.6.3 with Pygame 1.9.3, but
  other Python 3 and Pygame versions must work too.
-
+<br><br>
   - Description:
   
   The starting position is represented as a green square, and
