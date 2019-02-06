@@ -11,8 +11,8 @@ GOAL_INIT_POS = (30,30)  # Goal initial position.
 OBS_WIDTH = 10  # Drawing obstacle width.
 OBS_COLOR = (77,135,181) # Obstacles color.
 
-WIDTH = 1000  # Display's width.
-HEIGHT = 800  # Display's height.
+WIDTH = 800  # Display's width.
+HEIGHT = 600  # Display's height.
 
 CAPTION = 'RRT path finder'  # Window's caption.
 
