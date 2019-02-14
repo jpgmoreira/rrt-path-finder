@@ -1,8 +1,6 @@
-# Python-Pygame RRT path finder
+# RRT algorithm implementation using Python and Pygame
 
---- RRT algorithm implementation using Python with Pygame.  ---
-
-​	This program implements the RRT path finding algorithm, as described in "https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree".
+​	This program implements the *RRT path finding* algorithm, as described in https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree .
 
 - - -
 
@@ -18,11 +16,11 @@
 
   - Description:
 
-      The starting position is represented as a green square, and the goal position as a red square.
+      The starting position is represented as a green square, and the target position as a red square.
 
-      You can grab and drag the initial and goal positions to move them on the screen.
+      You can grab and drag the start and target positions to move them using the mouse's left button.
 
-      The left mouse button allows obstacles drawing, and the right mouse button erases the obstacles.
+      The left mouse button also allows obstacles drawing. Use the right mouse button to erase the obstacles.
 
 ​    
 
@@ -32,23 +30,19 @@
 
       - Enter: Starts the RRT path finding algorithm on the current map.
       - 'c' : Clears the map's obstacles.
-      - 's' : Saves the current map obstacles as 'map.png'.
+      - 's' : Saves the current map of obstacles as 'map.png'.
       - 'l': Loads an existing 'map.png' file as new obstacles map.
 
-    > If there is an existing "map.png" file in the same directory of "RRT_Path_finder.py", then pressing the 's' key replaces the old "map.png" with the new image! 
-
-    
+    > If there is a "map.png" file in the same directory of "main.py", then pressing the 's' key replaces the existing "map.png" with the new image! 
 
     - When the algorithm is running or a path was found:
       - 'h' : Hide or show status information of the algorithm. If a key other than 'h' is pressed now, then the algorithm stops and the program returns to the "normal" state.
 
-    
 
-- - -
+------
 
-Each time the program states change, the new state is shown on the console.
+Each time the program state changes, the new state is shown on the console.
 Possible states are:
 
-   - "normal", "start_drag", "goal_drag", "drawing", "erasing", "running" and "path_found".
+   - "normal", "start_drag", "target_drag", "drawing", "erasing", "running" and "path_found".
 
-     

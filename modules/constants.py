@@ -1,12 +1,11 @@
-
 from pygame import font
 font.init()
 
-SIDE = 30  # Start and goal squares side.
+SIDE = 30  # Start and target squares side.
 START_COLOR = (0,255,0)  # Start color = green.
-GOAL_COLOR = (255,0,0)  # Goal color = red.
+TARGET_COLOR = (255,0,0)  # Target color = red.
 START_INIT_POS = (100,100)  # Start initial position.
-GOAL_INIT_POS = (30,30)  # Goal initial position.
+TARGET_INIT_POS = (30,30)  # Target initial position.
 
 OBS_WIDTH = 10  # Drawing obstacle width.
 OBS_COLOR = (77,135,181) # Obstacles color.
