@@ -2,6 +2,8 @@
 
 ​	This program implements the *RRT path finding* algorithm, as described in https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree .
 
+​	Demo video: https://www.youtube.com/watch?v=Ul8esqHFeN8
+
 - - -
 
  - Prerequisites:
@@ -37,7 +39,6 @@
 
     - When the algorithm is running or a path was found:
       - 'h' : Hide or show status information of the algorithm. If a key other than 'h' is pressed now, then the algorithm stops and the program returns to the "normal" state.
-
 
 ------
 
