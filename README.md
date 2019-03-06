@@ -2,7 +2,7 @@
 
 ​	This program implements the *RRT path finding* algorithm, as described in https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree .
 
-​	Demo video: https://www.youtube.com/watch?v=Ul8esqHFeN8
+​	Demo video: https://www.youtube.com/watch?v=cbYwxA9g_9k
 
 - - -
 
