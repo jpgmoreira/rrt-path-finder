@@ -5,8 +5,8 @@ def collision(src, dst, obstacles):
 	"""
 	Check if the segment src - dst collides with any obstacle in obstacles.
 
-	src -- point (int, int)
-	dst -- point (int, int)
+	src -- point (x, y)
+	dst -- point (x, y)
 	obstacles -- pygame.Surface
 	"""
 	vx, vy = normalize(dst[0] - src[0], dst[1] - src[1])

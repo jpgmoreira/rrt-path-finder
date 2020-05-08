@@ -57,7 +57,7 @@ def addEdge(edge):
 		edgesPool = []
 		update()
 
-def clearEdges():
+def clearEdgesPool():
 	global edgesPool
 	edgesPool = []
 

@@ -34,6 +34,7 @@ def main():
 		elif gameState == 'load':
 			drawing.loadObstacles()
 		elif gameState == 'rrt':
+			drawing.clearEdgesPool()
 			tree = rrt(drawing.startPos, drawing.goalPos, drawing.obstaclesSurface)
 			if tree:  # A path was found:
 				drawing.drawPath(tree)
