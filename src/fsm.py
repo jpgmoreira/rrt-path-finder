@@ -1,3 +1,5 @@
+from config import *
+from utils import dist
 import drawing
 import pygame as pg
 

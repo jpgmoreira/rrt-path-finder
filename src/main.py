@@ -1,8 +1,11 @@
+from config import *
 from rrt import rrt
 import drawing
 import fsm
 import pygame as pg
 pg.init()
+
+drawing.screen = pg.display.set_mode((WIDTH, HEIGHT))
 
 gameState = 'waiting'
 
