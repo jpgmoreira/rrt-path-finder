@@ -1,11 +1,20 @@
+"""
+This is the module responsible for handling drawings to the screen.
+All pygame.draw commands must be executed inside this module.
+It also contains important variables related to drawing and other uses,
+  that are accessible by other modules, such as startPos and goalPos. 
+"""
 from config import *
 import pygame as pg
 
+# Reference to the application's screen:
 screen = None
 
+# Initialize start and goal positions:
 startPos = START_INIT_POS
 goalPos = GOAL_INIT_POS
 
+# Surfaces drawn to the screen:
 obstaclesSurface = pg.Surface((WIDTH, HEIGHT))
 treeSurface = pg.Surface((WIDTH, HEIGHT))
 infoSurface = pg.Surface((WIDTH, HEIGHT))
@@ -13,8 +22,10 @@ infoSurface = pg.Surface((WIDTH, HEIGHT))
 treeSurface.set_colorkey((0, 0, 0))
 infoSurface.set_colorkey((0, 0, 0))
 
+# Edges pool to avoid updating the screen every time a new edge is added:
 edgesPool = []
 
+# Show or not the information about the algorithm:
 showInfo = False
 
 def drawObstacle(position):
@@ -62,7 +73,8 @@ def updateInfo(elapsed, nodes, height, length = None):
 		f'Nodes: {nodes}',
 		f'Height: {height}'
 	]
-	if length: lines.append(f'Path length: {length}')
+	if length:
+		lines.append(f'Path length: {length}')
 	for i in range(len(lines)):
 		temp = FONT.render(lines[i], 0, (255, 255, 0), (0, 0, 1))
 		infoSurface.blit(temp, (WIDTH - temp.get_width(), i * FONT.get_height()))
@@ -78,6 +90,7 @@ def drawPath(parent):
 	pg.draw.circle(treeSurface, (0, 191, 255), current, 4)
 
 def update():
+	"""Update the screen."""
 	screen.fill(0)
 	screen.blit(obstaclesSurface, (0, 0))
 	pg.draw.circle(screen, GOAL_COLOR, goalPos, RADIUS)

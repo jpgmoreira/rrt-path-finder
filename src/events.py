@@ -4,6 +4,7 @@ import drawing
 import pygame as pg
 
 def rrtHandler():
+	"""Handle user events during RRT execution."""
 	event = pg.event.poll()
 	if event.type == pg.KEYDOWN:
 		if event.key == pg.K_h:
@@ -15,6 +16,7 @@ def rrtHandler():
 	return True
 
 def mainHandler(event, state, mousePos):
+	"""State transitions when executing the main function."""
 	overStart = dist(drawing.startPos, mousePos) < RADIUS
 	overGoal = dist(drawing.goalPos, mousePos) < RADIUS
 
