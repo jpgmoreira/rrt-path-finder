@@ -12,4 +12,8 @@ def inside(point, center):
 	return dist(point, center) < RADIUS
 
 def normalize(vx, vy):
-	
+	norm = math.sqrt(vx * vx + vy * vy)
+	if (norm > 1e-6):
+		vx /= norm
+		vy /= norm
+	return (vx, vy)
