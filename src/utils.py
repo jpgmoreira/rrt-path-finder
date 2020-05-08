@@ -11,3 +11,5 @@ def randomPoint():
 def inside(point, center):
 	return dist(point, center) < RADIUS
 
+def normalize(vx, vy):
+	
