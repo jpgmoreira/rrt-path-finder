@@ -1,6 +1,6 @@
 from rrt import rrt
 import drawing
-import events
+import fsm
 import pygame as pg
 pg.init()
 
@@ -10,7 +10,7 @@ while True:
 	event = pg.event.poll()
 	mousePos = pg.mouse.get_pos()
 
-	gameState = events.handle(event, gameState)
+	gameState = fsm.transition(event, gameState, mousePos)
 
 	if gameState == 'start-positioning':
 		drawing.startPos = mousePos
@@ -20,6 +20,10 @@ while True:
 		drawing.drawObstacle(mousePos)
 	elif gameState == 'erasing':
 		drawing.eraseObstacle(mousePos)
+	elif gameState == 'save':
+		drawing.saveObstacles()
+	elif gameState == 'load':
+		drawing.loadObstacles()
 	elif gameState == 'rrt':
 		rrt(drawing.startPos, drawing.goalPos, drawing.obstaclesSurface)
 
