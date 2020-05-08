@@ -1,7 +1,7 @@
 from config import *
 from rrt import rrt
 import drawing
-import fsm
+import events
 import pygame as pg
 pg.init()
 
@@ -13,7 +13,7 @@ while True:
 	event = pg.event.poll()
 	mousePos = pg.mouse.get_pos()
 
-	gameState = fsm.transition(event, gameState, mousePos)
+	gameState = events.mainHandler(event, gameState, mousePos)
 
 	if gameState == 'start-positioning':
 		drawing.startPos = mousePos
@@ -30,6 +30,10 @@ while True:
 	elif gameState == 'load':
 		drawing.loadObstacles()
 	elif gameState == 'rrt':
-		rrt(drawing.startPos, drawing.goalPos, drawing.obstaclesSurface)
+		tree = rrt(drawing.startPos, drawing.goalPos, drawing.obstaclesSurface)
+		if tree:
+			pass
+		else:
+			gameState = 'waiting'			
 
 	drawing.update()

@@ -3,7 +3,17 @@ from utils import dist
 import drawing
 import pygame as pg
 
-def transition(event, state, mousePos):
+def rrtHandler():
+	event = pg.event.poll()
+	if event.type == pg.KEYDOWN:
+		if event.key == pg.K_h:
+			drawing.toggleInfo()
+		else:
+			drawing.clearTree()
+			return False
+	return True
+
+def mainHandler(event, state, mousePos):
 	overStart = dist(drawing.startPos, mousePos) < RADIUS
 	overGoal = dist(drawing.goalPos, mousePos) < RADIUS
 

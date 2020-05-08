@@ -3,6 +3,7 @@ from collision import collision
 from utils import randomPoint, inside
 import pygame as pg
 import drawing
+import events
 import time
 
 def rrt(start, goal, obstacles):
@@ -20,7 +21,7 @@ def rrt(start, goal, obstacles):
 	startTime = time.perf_counter()
 
 	while not False:#inside(current, goal):
-		event = pg.event.poll()
+		if not events.rrtHandler(): return None
 
 		sample = randomPoint()
 		nearest = container.NNS(sample)
