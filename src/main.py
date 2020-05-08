@@ -19,7 +19,9 @@ def main():
 
 		gameState = events.mainHandler(event, gameState, mousePos)
 
-		if gameState == 'start-positioning':
+		if gameState == 'quit':
+			return
+		elif gameState == 'start-positioning':
 			drawing.startPos = mousePos
 		elif gameState == 'goal-positioning':
 			drawing.goalPos = mousePos
