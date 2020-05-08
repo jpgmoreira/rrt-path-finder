@@ -46,6 +46,10 @@ def addEdge(edge):
 		edgesPool = []
 		update()
 
+def clearEdges():
+	global edgesPool
+	edgesPool = []
+
 def toggleInfo():
 	global showInfo
 	showInfo = not showInfo

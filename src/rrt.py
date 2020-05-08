@@ -7,6 +7,8 @@ import events
 import time
 
 def rrt(start, goal, obstacles):
+	drawing.clearEdges()
+
 	parent = { start: None }
 	depth = { start: 0 }
 
