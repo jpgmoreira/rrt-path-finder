@@ -22,7 +22,7 @@ def rrt(start, goal, obstacles):
 
 	startTime = time.perf_counter()
 
-	while not False:#inside(current, goal):
+	while not inside(current, goal):
 		if not events.rrtHandler(): return None
 
 		if drawing.showInfo:
@@ -47,3 +47,15 @@ def rrt(start, goal, obstacles):
 			drawing.addEdge( (nearest, sample) )
 
 			current = sample
+	
+	if not goal in parent:
+		parent[goal] = current
+		depth[goal] = depth[current] + 1
+		height = max(height, depth[goal])
+		nodes += 1
+		drawing.addEdge( (current, goal) )
+
+	elapsed = time.perf_counter() - startTime
+	drawing.updateInfo(elapsed, nodes, height, depth[goal])
+
+	return parent
