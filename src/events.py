@@ -10,6 +10,7 @@ def rrtHandler():
 			drawing.toggleInfo()
 		else:
 			drawing.clearTree()
+			drawing.showInfo = False
 			return False
 	return True
 
@@ -35,5 +36,14 @@ def mainHandler(event, state, mousePos):
 
 	elif state in ['save', 'load', 'clear']:
 		return 'waiting'
+
+	elif state == 'path-found':
+		if event.type == pg.KEYDOWN:
+			if event.key == pg.K_h:
+				drawing.toggleInfo()
+			else:
+				drawing.clearTree()
+				drawing.showInfo = False
+				return 'waiting'
 
 	return state

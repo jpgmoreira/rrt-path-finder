@@ -67,6 +67,16 @@ def updateInfo(elapsed, nodes, height, length = None):
 		temp = FONT.render(lines[i], 0, (255, 255, 0), (0, 0, 1))
 		infoSurface.blit(temp, (WIDTH - temp.get_width(), i * FONT.get_height()))
 
+def drawPath(parent):
+	global showInfo
+	showInfo = True
+	current = goalPos
+	while parent[current]:
+		pg.draw.line(treeSurface, (0, 0, 255), current, parent[current], 4)
+		pg.draw.circle(treeSurface, (0, 191, 255), current, 4)
+		current = parent[current]
+	pg.draw.circle(treeSurface, (0, 191, 255), current, 4)
+
 def update():
 	screen.fill(0)
 	screen.blit(obstaclesSurface, (0, 0))

@@ -32,7 +32,8 @@ while True:
 	elif gameState == 'rrt':
 		tree = rrt(drawing.startPos, drawing.goalPos, drawing.obstaclesSurface)
 		if tree:
-			pass
+			drawing.drawPath(tree)
+			gameState = 'path-found'
 		else:
 			gameState = 'waiting'			
 
