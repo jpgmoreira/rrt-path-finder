@@ -24,7 +24,7 @@ def saveObstacles():
 	pg.image.save(obstaclesSurface, MAP_FILENAME)
 
 def loadObstacles():
-	print('loading')
+	global obstaclesSurface
 	obstaclesSurface = pg.image.load(MAP_FILENAME)
 
 def update():
