@@ -11,6 +11,8 @@ treeSurface = pg.Surface((WIDTH, HEIGHT))
 
 treeSurface.set_colorkey((0, 0, 0))
 
+edgesPool = []
+
 def drawObstacle(position):
 	pg.draw.circle(obstaclesSurface, OBSTACLES_COLOR, position, OBSTACLES_RADIUS)	
 
@@ -26,6 +28,16 @@ def saveObstacles():
 def loadObstacles():
 	global obstaclesSurface
 	obstaclesSurface = pg.image.load(MAP_FILENAME)
+
+def addEdge(edge):
+	global edgesPool
+	edgesPool.append(edge)
+	if len(edgesPool) >= MAX_EDGES_POOL:
+		for e in edgesPool:
+			pg.draw.circle(treeSurface, (255, 128, 0), e[1], 2)
+			pg.draw.line(treeSurface, (255, 255, 255), e[0], e[1])
+		edgesPool = []
+		update()
 
 def update():
 	screen.fill(0)
