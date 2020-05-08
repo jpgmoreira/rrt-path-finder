@@ -1,49 +1,38 @@
 # RRT algorithm implementation using Python and Pygame
 
-​	This program implements the *RRT path finding* algorithm, as described in https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree .
+This program implements the Rapidly-exploring Random Tree (RRT) algorithm, as described in https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree
 
-​	Demo video: https://www.youtube.com/watch?v=cbYwxA9g_9k
+Demo video: https://www.youtube.com/watch?v=cbYwxA9g_9k
 
-- - -
+**May 2020 update**: This program was rewritten, and now its code is more organized and better structured. A new demo video was recorded too.
 
- - Prerequisites:
 
-    This program was written in Python 3.6.3 with Pygame 1.9.3, but other Python 3 and Pygame versions must work too.
 
-    - Python: https://www.python.org
+## How to run
 
-    - Pygame: https://www.pygame.org
+This program was written using [Python](https://www.python.org/) 3.6.8 and [Pygame](https://www.pygame.org/) 1.9.6, but newer versions of Python3 and Pygame must work too.
 
-      
+After installing Python and Pygame on your system, go to the root folder of this repository and execute the command `python3 src/main.py` or `python src/main.py`, depending on your Python3 executable name.
 
-  - Description:
 
-      The starting position is represented as a green square, and the target position as a red square.
 
-      You can grab and drag the start and target positions to move them using the mouse's left button.
+## Usage
 
-      The left mouse button also allows obstacles drawing. Use the right mouse button to erase the obstacles.
+The start position is represented as a green circle, and the goal position as a red circle.
+Use the mouse to move the start and goal positions.
+Use the left mouse button to draw obstacles, and the right button to erase them.
 
-​    
+##### Keyboard:
 
-  - Keyboard:
+When the algorithm is not running:
 
-    - When the algorithm is not running (state != "running"):
+- <kbd>Return</kbd>: Start the RRT algorithm on the current map.
+- <kbd>c</kbd>: Clear the map's obstacles.
+- <kbd>s</kbd>: Save the current map as 'map.png'
+- <kbd>l</kbd>: Load an existing 'map.png' file as the new obstacles map.
 
-      - Enter: Starts the RRT path finding algorithm on the current map.
-      - 'c' : Clears the map's obstacles.
-      - 's' : Saves the current map of obstacles as 'map.png'.
-      - 'l': Loads an existing 'map.png' file as new obstacles map.
+When the algorithm is running or a path was found:
 
-    > If there is a "map.png" file in the same directory of "main.py", then pressing the 's' key replaces the existing "map.png" with the new image! 
+- <kbd>h</kbd>: Show / hide information about the algorithm on the screen.
 
-    - When the algorithm is running or a path was found:
-      - 'h' : Hide or show status information of the algorithm. If a key other than 'h' is pressed now, then the algorithm stops and the program returns to the "normal" state.
-
-------
-
-Each time the program state changes, the new state is shown on the console.
-Possible states are:
-
-   - "normal", "start_drag", "target_drag", "drawing", "erasing", "running" and "path_found".
-
+  If any key other than <kbd>h</kbd> is pressed now, then the algorithm stops and the program returns to the initial state.
