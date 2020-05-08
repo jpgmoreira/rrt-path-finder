@@ -9,7 +9,6 @@ goalPos = GOAL_INIT_POS
 obstaclesSurface = pg.Surface((WIDTH, HEIGHT))
 treeSurface = pg.Surface((WIDTH, HEIGHT))
 
-obstaclesSurface.set_colorkey((0, 0, 0))
 treeSurface.set_colorkey((0, 0, 0))
 
 def drawObstacle(position):
@@ -18,14 +17,15 @@ def drawObstacle(position):
 def eraseObstacle(position):
 	pg.draw.circle(obstaclesSurface, (0, 0, 0), position, OBSTACLES_RADIUS)	
 
+def clearObstacles():
+	obstaclesSurface.fill(0)
+
 def saveObstacles():
 	pg.image.save(obstaclesSurface, MAP_FILENAME)
 
 def loadObstacles():
-	try:
-		obstaclesSurface = pg.image.load(MAP_FILENAME)
-	except:
-		pass
+	print('loading')
+	obstaclesSurface = pg.image.load(MAP_FILENAME)
 
 def update():
 	screen.fill(0)

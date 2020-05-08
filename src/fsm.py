@@ -17,12 +17,13 @@ def transition(event, state, mousePos):
 			if event.key == pg.K_RETURN: return 'rrt'
 			elif event.key == pg.K_s: return 'save'
 			elif event.key == pg.K_l: return 'load'		
+			elif event.key == pg.K_c: return 'clear'		
 
 	elif state in ['drawing', 'erasing', 'start-positioning', 'goal-positioning']:
 		if event.type == pg.MOUSEBUTTONUP:
 			return 'waiting'
 
-	elif state in ['save', 'load']:
+	elif state in ['save', 'load', 'clear']:
 		return 'waiting'
 
 	return state

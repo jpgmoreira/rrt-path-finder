@@ -23,6 +23,8 @@ while True:
 		drawing.drawObstacle(mousePos)
 	elif gameState == 'erasing':
 		drawing.eraseObstacle(mousePos)
+	elif gameState == 'clear':
+		drawing.clearObstacles()
 	elif gameState == 'save':
 		drawing.saveObstacles()
 	elif gameState == 'load':
