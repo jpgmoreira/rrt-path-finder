@@ -23,6 +23,11 @@ def rrt(start, goal, obstacles):
 	while not False:#inside(current, goal):
 		if not events.rrtHandler(): return None
 
+		if drawing.showInfo:
+			elapsed = time.perf_counter() - startTime
+			drawing.updateInfo(elapsed, nodes, height)
+			drawing.update()
+
 		sample = randomPoint()
 		nearest = container.NNS(sample)
 

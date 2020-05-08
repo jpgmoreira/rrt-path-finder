@@ -1,3 +1,6 @@
+from pygame import font
+font.init()
+
 WIDTH = 800
 HEIGHT = 600
 
@@ -16,3 +19,4 @@ MAX_EDGES_POOL = 10
 
 MAP_FILENAME = 'map.png'
 
+FONT = font.SysFont('Tahoma', 25, bold = True)
