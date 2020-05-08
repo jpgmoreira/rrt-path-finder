@@ -4,7 +4,7 @@ This program implements the Rapidly-exploring Random Tree (RRT) algorithm, as de
 
 Demo video: https://www.youtube.com/watch?v=cbYwxA9g_9k
 
-**May 2020 update**: This program was rewritten, and now its code is more organized and better structured. A new demo video was recorded too.
+**May 2020 update**: This program was rewritten, and now its code is more organized and better structured.
 
 
 
