@@ -28,7 +28,7 @@ This program was written using [Python](https://www.python.org/) 3.6.8 and [Pyga
 
 The application must start, and you will see a new window like the one below:
 
-![](/home/joao/Desktop/Screenshot from 2020-05-08 22-19-29.png)
+![The screenshot became unavailable.](screenshot.png)
 
 
 
