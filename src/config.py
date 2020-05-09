@@ -8,8 +8,8 @@ HEIGHT = 600
 # Radius of the start and goal circles:
 RADIUS = 20
 
-START_INIT_POS = (10, 10)
-GOAL_INIT_POS = (WIDTH - 10, HEIGHT - 10)
+START_INIT_POS = (30, 30)
+GOAL_INIT_POS = (WIDTH - 30, HEIGHT - 30)
 
 START_COLOR = (0, 255, 0)
 GOAL_COLOR = (255, 0, 0)
